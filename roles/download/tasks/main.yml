@@ -3,7 +3,7 @@
 
 - name: Download Wildfly archive.
   get_url:
-    url: "{{ wildfly_download_url }}/{{ ejbca_wildfly_package }}.zip"
+    url: "{{ wildfly_download_url }}/{{ ejbca_wildfly_package }}.zip/download"
     dest: "{{ ejbca_download_dir }}"
   when: wildfly_file.stat.exists == False
 
