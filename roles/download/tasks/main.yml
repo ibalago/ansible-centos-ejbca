@@ -1,10 +1,9 @@
-
 - stat: path="{{ ejbca_download_dir }}/{{ ejbca_wildfly_package }}.zip"
   register: wildfly_file
 
 - name: Download Wildfly archive.
   get_url:
-    url: "{{ ejbca_download_url }}/{{ ejbca_wildfly_package }}.zip"
+    url: "{{ wildfly_download_url }}/{{ ejbca_wildfly_package }}.zip"
     dest: "{{ ejbca_download_dir }}"
   when: wildfly_file.stat.exists == False
 
@@ -22,6 +21,6 @@
 
 - name: Download MariaDB Java Connector.
   get_url:
-    url: "{{ ejbca_download_url }}/mariadb-java-client-{{mariadb_java_client_version }}.jar"
+    url: "{{ mariadb_java_client_download_url }}/mariadb-java-client-{{mariadb_java_client_version }}.jar"
     dest: "{{ ejbca_download_dir }}"
   when: mariadb_file.stat.exists == False

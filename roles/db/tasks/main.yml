@@ -1,6 +1,9 @@
 - name: Start MariaDB
   service: name="mariadb" state=started enabled=yes
 
+- name: install docker-py
+  pip: name=PyMySQL
+
 - name: create EJBCA database
   mysql_db: name="{{ ejbca_database }}" state=present
 

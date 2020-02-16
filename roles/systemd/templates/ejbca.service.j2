@@ -4,8 +4,8 @@ After=syslog.target network.target
 
 [Service]
 Type=simple
-ExecStart={{ ejbca_jboss_home }}/bin/standalone.sh
-ExecStop={{ ejbca_jboss_home }}/bin/jboss-cli.sh --connect --command=:shutdown
+ExecStart=/bin/bash {{ ejbca_jboss_home }}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0
+ExecStop=/bin/bash {{ ejbca_jboss_home }}/bin/jboss-cli.sh --connect --command=:shutdown
 User={{ ca_user }}
 Group={{ ca_user }}
 
