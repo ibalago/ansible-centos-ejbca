@@ -1,4 +1,4 @@
-<VirtualHost *:80>
+<VirtualHost *:8080>
 	ServerName {{ ejbca_httpserver_name }}.{{ ejbca_httpserver_domain }}
         DocumentRoot /var/www/
 
@@ -23,7 +23,7 @@
 </VirtualHost>
 
 
-<VirtualHost *:443>
+<VirtualHost *:8442>
 	ServerName {{ ejbca_httpserver_name }}.{{ ejbca_httpserver_domain }}
         DocumentRoot /var/www/
 
